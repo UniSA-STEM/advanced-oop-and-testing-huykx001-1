@@ -1,5 +1,5 @@
 """
-File: filename.py
+File: animal.py
 Description: This module represents the Animal abstract class. It contains
 various method methods and a string conversion to print a message.
 Author: Kim Xuyen Huynh
@@ -12,7 +12,7 @@ from abc import ABC, abstractmethod
 
 
 class Animal(ABC):
-    def __int__(self, name, species, age, dietary):
+    def __init__(self, name, species, age, dietary):
         self.__name = name
         self.__species = species
         self.__age = age
