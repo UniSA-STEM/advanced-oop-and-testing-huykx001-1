@@ -18,6 +18,20 @@ class Animal(ABC):
         self.__age = age
         self.__dietary = dietary
 
+    # Getters for the private attributes.
+    def get_name(self):
+        return self.__name
+
+    def get_species(self):
+        return self.__species
+
+    def get_age(self):
+        return self.__age
+
+    def get_dietary(self):
+        return self.__dietary
+
+    # Placeholders for the Animal class.
     @abstractmethod
     def sound(self):
         pass
@@ -29,6 +43,12 @@ class Animal(ABC):
     @abstractmethod
     def sleep(self):
         pass
+
+    # properties
+    name = property(get_name)
+    species = property(get_species)
+    age = property(get_age)
+    dietary = property(get_dietary)
 
     def __str__(self):
         return (f"name: {self.__name}\n"
