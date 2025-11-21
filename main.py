@@ -13,13 +13,13 @@ from enclosure import Enclosure
 from staff import Staff, Zookeeper, Veterinarian
 
 # names for mammal, reptile, and bird
-mammal = Mammal("Scar", "Lion", 40, "meat")
-reptile = Reptile("Pascal", "Chameleon", 5, "insect")
-bird = Bird("Red", "Northern Cardinal", 20, "seed")
-fish = Fish("Magikarp", "Asian carp", 3, "plant")
+lion = Mammal("Scar", "Lion", 40, "meat")
+chameleon = Reptile("Pascal", "Chameleon", 5, "insect")
+Northern_cardinal = Bird("Red", "Northern Cardinal", 20, "seed")
+asian_carp = Fish("Magikarp", "Asian carp", 3, "plant")
 
 # names for the enclosure
-Savannah = Enclosure("large", "Savannah", False)
+Savannah = Enclosure("large", "savannah", False)
 Desert = Enclosure("small", "desert", True)
 Forest = Enclosure("medium", "forest", True)
 Aquatic = Enclosure("medium", "aquatic", True)
@@ -28,20 +28,20 @@ Aquatic = Enclosure("medium", "aquatic", True)
 # NOTE: tests are grouped under each comment. will only work if other groups are commented
 
 # testing Mammal's methods and string conversion method
-mammal.sound()
-mammal.eat()
-mammal.sleep()
-print(mammal)
+lion.sound()
+lion.eat()
+lion.sleep()
+print(lion)
 
 # testing Reptile's methods and string conversion method
-reptile.sound()
-reptile.eat()
-reptile.sleep()
-print(reptile)
+chameleon.sound()
+chameleon.eat()
+chameleon.sleep()
+print(chameleon )
 
 # testing Bird's methods and string conversion method
-bird.sound()
-bird.eat()
-bird.sleep()
-print(bird)
+Northern_cardinal.sound()
+Northern_cardinal.eat()
+Northern_cardinal.sleep()
+print(Northern_cardinal)
 
