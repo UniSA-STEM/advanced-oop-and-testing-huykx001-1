@@ -10,17 +10,22 @@ This is my own work as defined by the University's Academic Integrity Policy.
 from animal import Animal
 from categories import Mammal, Reptile, Bird
 
-class Aquatic:
-    pass
+class Enclosure:
+    """
+    Constructor for the class Enclosure with private attributes such as
+    size, environment, cleanliness level, and animals.
+    """
+    def __init__(self, size, environment_type, cleanliness_level):
+        self.__size = size
+        self.__environment_type = environment_type
+        self.__cleanliness_level = cleanliness_level
+        self.__animals = []
 
-class Savannah:
-    pass
 
-class Forest:
-    pass
+    def __str__(self):
+        """
+        returns the current status
+        """
+        pass
 
-class deserts:
-    pass
 
-class Arctic:
-    pass
