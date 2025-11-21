@@ -17,5 +17,18 @@ class Staff:
         self.__assigned_animals = []
         self.__assigned_enclosure = []
 
+class Zookeeper(Staff):
+    """
+    Constructor the child class inherited by the Staff class.
+    """
+    def __init__(self, name, assigned_animals, assigned_enclosure):
+        super().__init__(name, assigned_animals, assigned_enclosure)
+
+class Veterinarian(Staff):
+    """
+    Constructor the child class inherited by the Staff class.
+    """
+    def __init__(self, name, assigned_animals, assigned_enclosure):
+        super().__init__(name, assigned_animals, assigned_enclosure)
 
 
