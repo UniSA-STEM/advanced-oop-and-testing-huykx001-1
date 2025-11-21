@@ -8,7 +8,7 @@ This is my own work as defined by the University's Academic Integrity Policy.
 """
 
 from animal import Animal
-from categories import Mammal, Reptile, Bird
+from categories import Mammal, Reptile, Bird, Fish
 from enclosure import Enclosure
 from staff import Staff, Zookeeper, Veterinarian
 
@@ -16,11 +16,13 @@ from staff import Staff, Zookeeper, Veterinarian
 mammal = Mammal("Scar", "Lion", 40, "meat")
 reptile = Reptile("Pascal", "Chameleon", 5, "insect")
 bird = Bird("Red", "Northern Cardinal", 20, "seed")
+fish = Fish("Magikarp", "Asian carp", 3, "plant")
 
 # names for the enclosure
 Savannah = Enclosure("large", "Savannah", False)
 Desert = Enclosure("small", "desert", True)
 Forest = Enclosure("medium", "forest", True)
+Aquatic = Enclosure("medium", "aquatic", True)
 
 # testing here
 # NOTE: tests are grouped under each comment. will only work if other groups are commented
