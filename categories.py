@@ -78,3 +78,31 @@ class Bird(Animal):
         Returns a sentence of the animal's information.
         """
         return f"I am {self.name} and a {self.species}. I am {self.age} years old and like {self.dietary}"
+
+
+class Fish(Animal):
+    """
+    Fish inherits attributes from the parent class (Animal).
+    """
+    def __init__(self, name, species, age, dietary):
+        super().__init__(name, species, age, dietary)
+
+    # Overriding Animal's abstract methods.
+    def sound(self):
+        # Function returns sound that reptile makes.
+        print(f"{self.name} lets out a glub glub glub")
+
+    def eat(self):
+        # Function displays reptile eating.
+        print(f"{self.name} is slurping its food!")
+
+    def sleep(self):
+        # Function displays reptile sleeping.
+        print(f"{self.name} is currently sleeping")
+
+    def __str__(self):
+        return f"I am {self.name} and a {self.species}. I am {self.age} years old and like {self.dietary}"
+
+
+
+
