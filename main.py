@@ -58,10 +58,13 @@ Aquatic = Enclosure("medium", "aquatic", True)
 # Aquatic.check_compatibility(northern_cardinal)
 
 # adding animal to the enclosure
-Savannah.add_animal("savannah", lion)
-Desert.add_animal("desert", chameleon)
-Forest.add_animal("forest", northern_cardinal)
-Aquatic.add_animal("aquatic", asian_carp)
-Aquatic.add_animal("aquatic", lion) # is not compatible
+# Savannah.add_animal("savannah", lion)
+# Desert.add_animal("desert", chameleon)
+# Forest.add_animal("forest", northern_cardinal)
+# Aquatic.add_animal("aquatic", asian_carp)
+# Aquatic.add_animal("aquatic", lion) # is not compatible
 
 # removing animal from the enclosure
+Savannah.add_animal("savannah", lion)
+Savannah.remove_animal("savannah", lion)
+Savannah.remove_animal("savannah", lion) # no animal in enclosure
