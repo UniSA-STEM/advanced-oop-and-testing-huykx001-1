@@ -46,13 +46,22 @@ Aquatic = Enclosure("medium", "aquatic", True)
 # print(northern_cardinal)
 
 # checking compatibility with habitat (working)
-Savannah.check_compatibility(lion)
-Desert.check_compatibility(chameleon)
-Forest.check_compatibility(northern_cardinal)
-Aquatic.check_compatibility(asian_carp)
+# Savannah.check_compatibility(lion)
+# Desert.check_compatibility(chameleon)
+# Forest.check_compatibility(northern_cardinal)
+# Aquatic.check_compatibility(asian_carp)
 
 # checking compatibility with habitat (not working)
-Savannah.check_compatibility(chameleon)
-Desert.check_compatibility(lion)
-Forest.check_compatibility(asian_carp)
-Aquatic.check_compatibility(northern_cardinal)
+# Savannah.check_compatibility(chameleon)
+# Desert.check_compatibility(lion)
+# Forest.check_compatibility(asian_carp)
+# Aquatic.check_compatibility(northern_cardinal)
+
+# adding animal to the enclosure
+Savannah.add_animal("savannah", lion)
+Desert.add_animal("desert", chameleon)
+Forest.add_animal("forest", northern_cardinal)
+Aquatic.add_animal("aquatic", asian_carp)
+Aquatic.add_animal("aquatic", lion) # is not compatible
+
+# removing animal from the enclosure
