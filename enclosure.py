@@ -21,7 +21,13 @@ class Enclosure:
         self.__size = size
         self.__environment_type = environment_type
         self.__cleanliness_level = cleanliness_level
-        self.__animals = []
+        self.__animals = {"savannah": None,
+                          "desert": None,
+                          "forest": None,
+                          "aquatic": None}
+
+    def get_animals(self):
+        return self.__animals
 
     def check_compatibility(self, animal):
         """
@@ -58,14 +64,28 @@ class Enclosure:
                 print(f"{animal.get_name()} is not compatible with the aquatic habitat.")
                 return False
 
-    def add_animal(self, animal):
-        pass
+    def add_animal(self, habitat, animal):
+        """
+        Adds the animal into the specific habitat system.
+        """
+        # checks for compatibility
+        if self.check_compatibility(animal):
+            # Adds the animal into the enclosure if its empty.
+            if self.__animals.get(habitat) == None:
+                # Adds animal into the enclosure.
+                self.__animals.update({habitat: animal.get_name()})
+                print(f"Added {animal.get_name()} to the {self.__environment_type} enclosure.")
+                # for key, value in self.__animals.items():
+                #     print(f"{key}: {value}")
 
     def remove_animal(self, animal):
+        """
+        Removes the animal from the specific habitat system.
+        """
         pass
 
     def __str__(self):
         """
-        returns the current status
+        Returns the current status.
         """
         pass
