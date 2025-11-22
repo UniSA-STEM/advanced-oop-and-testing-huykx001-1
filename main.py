@@ -15,7 +15,7 @@ from staff import Staff, Zookeeper, Veterinarian
 # names for mammal, reptile, and bird
 lion = Mammal("Scar", "Lion", 40, "meat")
 chameleon = Reptile("Pascal", "Chameleon", 5, "insect")
-Northern_cardinal = Bird("Red", "Northern Cardinal", 20, "seed")
+northern_cardinal = Bird("Red", "Northern Cardinal", 20, "seed")
 asian_carp = Fish("Magikarp", "Asian carp", 3, "plant")
 
 # names for the enclosure
@@ -28,20 +28,31 @@ Aquatic = Enclosure("medium", "aquatic", True)
 # NOTE: tests are grouped under each comment. will only work if other groups are commented
 
 # testing Mammal's methods and string conversion method
-lion.sound()
-lion.eat()
-lion.sleep()
-print(lion)
+# lion.sound()
+# lion.eat()
+# lion.sleep()
+# print(lion)
 
 # testing Reptile's methods and string conversion method
-chameleon.sound()
-chameleon.eat()
-chameleon.sleep()
-print(chameleon )
+# chameleon.sound()
+# chameleon.eat()
+# chameleon.sleep()
+# print(chameleon)
 
 # testing Bird's methods and string conversion method
-Northern_cardinal.sound()
-Northern_cardinal.eat()
-Northern_cardinal.sleep()
-print(Northern_cardinal)
+# northern_cardinal.sound()
+# northern_cardinal.eat()
+# northern_cardinal.sleep()
+# print(northern_cardinal)
 
+# checking compatibility with habitat (working)
+Savannah.check_compatibility(lion)
+Desert.check_compatibility(chameleon)
+Forest.check_compatibility(northern_cardinal)
+Aquatic.check_compatibility(asian_carp)
+
+# checking compatibility with habitat (not working)
+Savannah.check_compatibility(chameleon)
+Desert.check_compatibility(lion)
+Forest.check_compatibility(asian_carp)
+Aquatic.check_compatibility(northern_cardinal)
