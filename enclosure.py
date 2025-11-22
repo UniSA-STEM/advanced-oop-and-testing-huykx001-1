@@ -16,7 +16,6 @@ class Enclosure:
     Constructor for the class Enclosure with private attributes such as
     size, environment, cleanliness level, and animals.
     """
-
     def __init__(self, size, environment_type, cleanliness_level):
         self.__size = size
         self.__environment_type = environment_type
@@ -82,18 +81,20 @@ class Enclosure:
         """
         Removes the animal from the specific enclosure.
         """
-        # No animal placed in a specific enclosure.
-        if self.__animals.get(habitat) == None:
-            print(f"There are currently no animals in the {self.__environment_type} enclosure.")
-        else:
-            # Animal is removed from the enclosure.
-            self.__animals.update({habitat: (None)})
-            print(f"{animal.get_name()} has been removed from the {self.__environment_type} enclosure")
-            # for key, value in self.__animals.items():
-            #     print(f"{key}: {value}")
+        if self.check_compatibility(animal):
+            # No animal placed in a specific enclosure.
+            if self.__animals.get(habitat) == None:
+                print(f"There are currently no animals in the {self.__environment_type} enclosure.")
+            else:
+                # Animal is removed from the enclosure.
+                self.__animals.update({habitat: (None)})
+                print(f"{animal.get_name()} has been removed from the {self.__environment_type} enclosure")
+                # for key, value in self.__animals.items():
+                #     print(f"{key}: {value}")
 
     def __str__(self):
         """
         Returns the current status of animals in the system.
         """
-        pass
+        print(f"\n---{self.__environment_type.upper()} SYSTEM---")
+        return "\n".join(f"{enclosure}: {animal}" for enclosure, animal in self.__animals.items())
