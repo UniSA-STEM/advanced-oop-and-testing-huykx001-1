@@ -66,7 +66,7 @@ class Enclosure:
 
     def add_animal(self, habitat, animal):
         """
-        Adds the animal into the specific habitat system.
+        Adds the animal into the specific enclosure.
         """
         # checks for compatibility
         if self.check_compatibility(animal):
@@ -78,14 +78,22 @@ class Enclosure:
                 # for key, value in self.__animals.items():
                 #     print(f"{key}: {value}")
 
-    def remove_animal(self, animal):
+    def remove_animal(self, habitat, animal):
         """
-        Removes the animal from the specific habitat system.
+        Removes the animal from the specific enclosure.
         """
-        pass
+        # No animal placed in a specific enclosure.
+        if self.__animals.get(habitat) == None:
+            print(f"There are currently no animals in the {self.__environment_type} enclosure.")
+        else:
+            # Animal is removed from the enclosure.
+            self.__animals.update({habitat: (None)})
+            print(f"{animal.get_name()} has been removed from the {self.__environment_type} enclosure")
+            # for key, value in self.__animals.items():
+            #     print(f"{key}: {value}")
 
     def __str__(self):
         """
-        Returns the current status.
+        Returns the current status of animals in the system.
         """
         pass
