@@ -9,6 +9,9 @@ This is my own work as defined by the University's Academic Integrity Policy.
 
 # Note: remember to add data validation, testing
 
+from categories import Mammal, Reptile, Bird, Fish
+
+
 class Staff:
     """
     Constructor for the class Staff with private attributes such as
@@ -37,6 +40,7 @@ class Zookeeper(Staff):
 
     def __init__(self, name):
         super().__init__(name)
+        self.__clean_percentage = 0
 
     def assign_enclosure(self, enclosure):
         """
@@ -44,6 +48,24 @@ class Zookeeper(Staff):
         """
         self.get_assigned_enclosure().append(enclosure)
         print(f"{self.get_name()} is now assigned to the enclosure.")
+
+    def feed_animal(self):
+        pass
+
+    def clean_enclosure(self, enclosure):
+        """
+        cleans the enclosure depending on what cleanliness level it's at.
+        """
+        # The enclosure is now untidy.
+        if enclosure.get_cleanliness_level() == "dirty":
+            self.__clean_percentage += 50
+            print(f"cleaning enclosure...cleanliness now is at {self.__clean_percentage}%")
+        # The enclosure is now fully cleaned.
+        elif enclosure.get_cleanliness_level() == "untidy":
+            self.__clean_percentage += 100
+            print(f"cleaning enclosure...cleanliness now is at {self.__clean_percentage}% fully cleaned!")
+        elif enclosure.get_cleanliness_level() == "clean":
+            print(f"The enclosure is already cleaned!")
 
 
 class Veterinarian(Staff):
