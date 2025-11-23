@@ -16,17 +16,24 @@ class Enclosure:
     Constructor for the class Enclosure with private attributes such as
     size, environment, cleanliness level, and animals.
     """
+
     def __init__(self, size, environment_type, cleanliness_level):
         self.__size = size
         self.__environment_type = environment_type
-        self.__cleanliness_level = cleanliness_level
+        self.__cleanliness_level = {"clean": 100,
+                                    "untidy": 50,
+                                    "dirty": 0}
         self.__animals = {"savannah": None,
                           "desert": None,
                           "forest": None,
                           "aquatic": None}
 
+    # Getters for the private attribute animals.
     def get_animals(self):
         return self.__animals
+
+    def get_cleanliness_level(self):
+        return self.__cleanliness_level
 
     def check_compatibility(self, animal):
         """
@@ -74,8 +81,6 @@ class Enclosure:
                 # Adds animal into the enclosure.
                 self.__animals.update({habitat: animal.get_name()})
                 print(f"Added {animal.get_name()} to the {self.__environment_type} enclosure.")
-                # for key, value in self.__animals.items():
-                #     print(f"{key}: {value}")
 
     def remove_animal(self, habitat, animal):
         """
@@ -88,9 +93,6 @@ class Enclosure:
             else:
                 # Animal is removed from the enclosure.
                 self.__animals.update({habitat: (None)})
-                print(f"{animal.get_name()} has been removed from the {self.__environment_type} enclosure")
-                # for key, value in self.__animals.items():
-                #     print(f"{key}: {value}")
 
     def __str__(self):
         """
