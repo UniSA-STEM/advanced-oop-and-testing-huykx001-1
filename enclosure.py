@@ -9,6 +9,7 @@ This is my own work as defined by the University's Academic Integrity Policy.
 
 from animal import Animal
 from categories import Mammal, Reptile, Bird, Fish
+from staff import Staff
 
 
 class Enclosure:
@@ -80,17 +81,20 @@ class Enclosure:
                 self.__animals.update({habitat: animal.get_name()})
                 print(f"Added {animal.get_name()} to the {self.__environment_type} enclosure.")
 
-    def remove_animal(self, habitat, animal):
+    def remove_animal(self, habitat, animal, vet=None):
         """
         Removes the animal from the specific enclosure.
         """
-        if self.check_compatibility(animal):
+        if vet is not None:
+            print(f"{animal.get_name()} is sick/or injured! they cannot be moved!")
+        elif self.check_compatibility(animal):
             # No animal placed in a specific enclosure.
             if self.__animals.get(habitat) == None:
                 print(f"There are currently no animals in the {self.__environment_type} enclosure.")
             else:
                 # Animal is removed from the enclosure.
                 self.__animals.update({habitat: (None)})
+                print(f"removed {animal.get_name()} from the enclosure")
 
     def __str__(self):
         """
