@@ -11,18 +11,27 @@ from animal import Animal
 from categories import Mammal, Reptile, Bird, Fish
 from enclosure import Enclosure
 from staff import Staff, Zookeeper, Veterinarian
+from systemHealthRecord import SystemHealthRecord
 
 # names for mammal, reptile, and bird
-lion = Mammal("Scar", "Lion", 40, "meat")
-chameleon = Reptile("Pascal", "Chameleon", 5, "insect")
-northern_cardinal = Bird("Red", "Northern Cardinal", 20, "seed")
-asian_carp = Fish("Magikarp", "Asian carp", 3, "plant")
+lion = Mammal("Scar", "Lion", 40, "meat", 80)
+chameleon = Reptile("Pascal", "Chameleon", 5, "insect",70)
+northern_cardinal = Bird("Red", "Northern Cardinal", 20, "seed", 100)
+asian_carp = Fish("Magikarp", "Asian carp", 3, "plant", 20)
 
 # names for the enclosure
-Savannah = Enclosure("large", "savannah", False)
-Desert = Enclosure("small", "desert", True)
-Forest = Enclosure("medium", "forest", True)
-Aquatic = Enclosure("medium", "aquatic", True)
+Savannah = Enclosure("large", "savannah", "dirty")
+Desert = Enclosure("small", "desert", "untidy")
+Forest = Enclosure("medium", "forest", "clean")
+Aquatic = Enclosure("medium", "aquatic", "clean")
+
+# names for staffs
+zoo = Zookeeper("Raiden Shogun")
+vet =  Veterinarian("Alice")
+
+# records from the health system
+fracture = SystemHealthRecord("fracture", "20-11-25", "broken bone on the right leg", "most severe", "cast")
+flu = SystemHealthRecord("flu", "21-11-25", "common cold", "less severe", "antibiotics")
 
 # testing here
 # NOTE: tests are grouped under each comment. will only work if other groups are commented
@@ -63,8 +72,21 @@ Aquatic = Enclosure("medium", "aquatic", True)
 # Forest.add_animal("forest", northern_cardinal)
 # Aquatic.add_animal("aquatic", asian_carp)
 # Aquatic.add_animal("aquatic", lion) # is not compatible
+# print(Savannah)
+# print(Desert)
+# print(Forest)
+# print(Aquatic)
 
 # removing animal from the enclosure
-Savannah.add_animal("savannah", lion)
-Savannah.remove_animal("savannah", lion)
-Savannah.remove_animal("savannah", lion) # no animal in enclosure
+# Savannah.add_animal("savannah", lion)
+# Savannah.remove_animal("savannah", lion)
+# Savannah.remove_animal("savannah", lion) # no animal in enclosure
+# print(Savannah)
+
+# assigning zookeeper to a specific enclosure.
+zoo.assign_enclosure(Savannah)
+
+zoo.clean_enclosure(Savannah)
+
+
+zoo.feed_animal(lion, 60, 50)
