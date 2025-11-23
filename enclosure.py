@@ -20,9 +20,7 @@ class Enclosure:
     def __init__(self, size, environment_type, cleanliness_level):
         self.__size = size
         self.__environment_type = environment_type
-        self.__cleanliness_level = {"clean": 100,
-                                    "untidy": 50,
-                                    "dirty": 0}
+        self.__cleanliness_level = cleanliness_level
         self.__animals = {"savannah": None,
                           "desert": None,
                           "forest": None,
