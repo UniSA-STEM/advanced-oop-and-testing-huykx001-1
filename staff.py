@@ -10,6 +10,7 @@ This is my own work as defined by the University's Academic Integrity Policy.
 # Note: remember to add data validation, testing
 
 from categories import Mammal, Reptile, Bird, Fish
+from systemHealthRecord import SystemHealthRecord
 
 
 class Staff:
@@ -82,6 +83,18 @@ class Veterinarian(Staff):
     """
     Constructor the child class inherited by the Staff class.
     """
-
     def __init__(self, name):
         super().__init__(name)
+        self.__under_treatment = False
+
+    # Getter for the private attribute.
+    def get_under_treatment(self):
+        return self.__under_treatment
+
+    def add_record(self, animal, record):
+        """
+        record health issues added to the sick/injured animal.
+        """
+        print(f"Added the record {record.get_name()} to the {animal.get_name()}")
+        self.__under_treatment = True
+
