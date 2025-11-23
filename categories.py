@@ -14,9 +14,11 @@ class Mammal(Animal):
     """
     Mammal inherits attributes from the parent class (Animal).
     """
-    def __init__(self, name, species, age, dietary):
+
+    def __init__(self, name, species, age, dietary, health_bar):
         # Invoke attributes from parent class.
-        super().__init__(name, species, age, dietary)
+        super().__init__(name, species, age, dietary, health_bar)
+        self.__fur = "fur"  # unique trait.
 
     # Overriding Animal's abstract methods.
     def sound(self):
@@ -32,12 +34,15 @@ class Mammal(Animal):
         print(f"{self.name} is currently sleeping! zzz")
 
     def __str__(self):
-        return f"I am {self.name} and a {self.species}. I am {self.age} years old and like {self.dietary}"
+        return (f"\nI am {self.name} and a {self.species}\n"
+                f"I am {self.age} years old and like {self.dietary}\n"
+                f"I have {self.__fur}\n")
 
 
 class Reptile(Animal):
-    def __init__(self, name, species, age, dietary):
-        super().__init__(name, species, age, dietary)
+    def __init__(self, name, species, age, dietary, health_bar):
+        super().__init__(name, species, age, dietary, health_bar)
+        self.__scale = "scales"  # unique trait.
 
     # Overriding Animal's abstract methods.
     def sound(self):
@@ -50,15 +55,18 @@ class Reptile(Animal):
 
     def sleep(self):
         # Function displays reptile sleeping.
-        print(f"{self.name} is currently sleeping")
+        print(f"{self.name} is currently sleeping\n")
 
     def __str__(self):
-        return f"I am {self.name} and a {self.species}. I am {self.age} years old and like {self.dietary}"
+        return (f"I am {self.name} and a {self.species}\n"
+                f"I am {self.age} years old and like {self.dietary}\n"
+                f"I have {self.__scale}\n")
 
 
 class Bird(Animal):
-    def __init__(self, name, species, age, dietary):
-        super().__init__(name, species, age, dietary)
+    def __init__(self, name, species, age, dietary, health_bar):
+        super().__init__(name, species, age, dietary, health_bar)
+        self.__feather = "feathers"
 
     # Overriding Animal's abstract methods.
     def sound(self):
@@ -71,21 +79,25 @@ class Bird(Animal):
 
     def sleep(self):
         # Function displays bird sleeping.
-        print(f"{self.name} is currently sleeping")
+        print(f"{self.name} is currently sleeping\n")
 
     def __str__(self):
         """
         Returns a sentence of the animal's information.
         """
-        return f"I am {self.name} and a {self.species}. I am {self.age} years old and like {self.dietary}"
+        return (f"I am {self.name} and a {self.species}\n"
+                f"I am {self.age} years old and like {self.dietary}\n"
+                f"I have {self.__feather}\n")
 
 
 class Fish(Animal):
     """
     Fish inherits attributes from the parent class (Animal).
     """
-    def __init__(self, name, species, age, dietary):
-        super().__init__(name, species, age, dietary)
+
+    def __init__(self, name, species, age, dietary, health_bar):
+        super().__init__(name, species, age, dietary, health_bar)
+        self.__gill = "gills"
 
     # Overriding Animal's abstract methods.
     def sound(self):
@@ -98,11 +110,9 @@ class Fish(Animal):
 
     def sleep(self):
         # Function displays reptile sleeping.
-        print(f"{self.name} is currently sleeping")
+        print(f"{self.name} is currently sleeping\n")
 
     def __str__(self):
-        return f"I am {self.name} and a {self.species}. I am {self.age} years old and like {self.dietary}"
-
-
-
-
+        return (f"I am {self.name} and a {self.species}\n"
+                f"I am {self.age} years old and like {self.dietary}\n"
+                f"I have {self.__gill}\n")
