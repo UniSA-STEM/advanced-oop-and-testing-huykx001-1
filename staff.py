@@ -49,8 +49,18 @@ class Zookeeper(Staff):
         self.get_assigned_enclosure().append(enclosure)
         print(f"{self.get_name()} is now assigned to the enclosure.")
 
-    def feed_animal(self):
-        pass
+    def feed_animal(self, animal, hunger_level, current_hunger):
+        """
+        feeds the animal depending on what level hunger it's at.
+        """
+        # Animal cannot eat if it is already full.
+        if animal.get_max_hunger() <= hunger_level:
+            print(f"{animal.get_name()} is too full to consume more {animal.get_dietary()}!")
+        else:
+            # Animal consumes food, lowering its hunger level.
+            hunger_level -= current_hunger
+            print(f"{animal.get_name()} just consumed some delicious {animal.get_dietary()} yum!")
+            print(f"Current hunger level: {current_hunger}")
 
     def clean_enclosure(self, enclosure):
         """
