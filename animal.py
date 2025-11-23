@@ -12,11 +12,17 @@ from abc import ABC, abstractmethod
 
 
 class Animal(ABC):
-    def __init__(self, name, species, age, dietary):
+    """
+    Constructor for the class Animal with private attributes such as
+    name, species, age, and dietary.
+    """
+    def __init__(self, name, species, age, dietary, health_bar):
         self.__name = name
         self.__species = species
         self.__age = age
         self.__dietary = dietary
+        self.__health_bar = health_bar
+        self.__max_hunger = 100
 
     # Getters for the private attributes.
     def get_name(self):
@@ -30,6 +36,12 @@ class Animal(ABC):
 
     def get_dietary(self):
         return self.__dietary
+
+    def get_health_bar(self):
+        return self.__health_bar
+
+    def get_max_hunger(self):
+        return self.__max_hunger
 
     # Placeholders for the Animal class.
     @abstractmethod
@@ -50,6 +62,7 @@ class Animal(ABC):
     age = property(get_age)
     dietary = property(get_dietary)
 
+    # String conversion to print out the attributes.
     def __str__(self):
         return (f"name: {self.__name}\n"
                 f"species: {self.__species}\n"
