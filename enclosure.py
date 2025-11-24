@@ -1,6 +1,7 @@
 """
 File: enclosure.py
-Description: This module represents the enclosure class.
+Description: This module represents the enclosure class. It sorts out the animals into its
+assigned enclosure.
 Author: Kim Xuyen Huynh
 ID: 110100110
 Username: Huykx001
@@ -33,6 +34,9 @@ class Enclosure:
 
     def get_cleanliness_level(self):
         return self.__cleanliness_level
+
+    def get_environment_type(self):
+        return self.__environment_type
 
     def check_compatibility(self, animal):
         """
@@ -85,6 +89,7 @@ class Enclosure:
         """
         Removes the animal from the specific enclosure.
         """
+        # Cannot move animal if it is under treatment.
         if vet is not None:
             print(f"{animal.get_name()} is sick/or injured! they cannot be moved!")
         elif self.check_compatibility(animal):
@@ -96,6 +101,7 @@ class Enclosure:
                 self.__animals.update({habitat: (None)})
                 print(f"removed {animal.get_name()} from the enclosure")
 
+    # string conversion method to print the enclosure system.
     def __str__(self):
         """
         Returns the current status of animals in the system.

@@ -1,6 +1,7 @@
 """
 File: testing.py
-Description: A brief description of this Python module.
+Description: This module represents the testing module. Its for testing the interacts if the classes to see
+if it has passed or not.
 Author: Kim Xuyen Huynh
 ID: 110442620
 Username: Huykx001

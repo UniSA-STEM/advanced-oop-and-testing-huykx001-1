@@ -1,6 +1,7 @@
 """
 File: staff.py
-Description: A brief description of this Python module.
+Description: This module represents the staff's class. This module has a staff as the parent class
+and the child class (vet and zookeeper) inheriting it.
 Author: Kim Xuyen Huynh
 ID: 110442620
 Username: Huykx001

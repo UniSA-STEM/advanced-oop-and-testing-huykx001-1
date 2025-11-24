@@ -1,6 +1,7 @@
 """
 File: categories.py
-Description: This module represents the categories class.
+Description: This module represents the categories class. It is a parent class in which the categories
+(child class) will inherit.
 Author: Kim Xuyen Huynh
 ID: 110442620
 Username: Huykx001
