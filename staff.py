@@ -38,6 +38,10 @@ class Zookeeper(Staff):
         super().__init__(name)
         self.__clean_percentage = 0
 
+    # getter for private attribute.
+    def get_clean_percentage(self):
+        return self.__clean_percentage
+
     def assign_enclosure(self, enclosure):
         """
         assigns the zookeeper to a specific enclosure
@@ -110,7 +114,10 @@ class Veterinarian(Staff):
         if enclosure.get_animals():
             # Assigns the Vet into the specific enclosure.
             self.__vet_enclosure.append(enclosure.get_environment_type())
-            print(f"{self.get_name()} is now assigned to the {enclosure.get_environment_type()} enclosure")
+            try:
+                print(f"{self.get_name()} is now assigned to the {enclosure.get_environment_type()} enclosure")
+            except TypeError:
+                print("should be an string")
 
     def add_record(self, animal, record, enclosure):
         """
@@ -133,5 +140,5 @@ class Veterinarian(Staff):
 
     def __str__(self):
         return (f"\n---HEATH STATUS---\n"
-                f"name: \n"
+                f"name: Scar\n"
                 f"status: {self.check_record()}")

@@ -23,15 +23,15 @@ class Mammal(Animal):
     # Overriding Animal's abstract methods.
     def sound(self):
         # Function returns sound that the mammal makes.
-        print(f"{self.name} lets out a big growl")
+        return f"{self.name} lets out a big growl"
 
     def eat(self):
         # Function displays the mammal eating.
-        print(f"{self.name} is tearing apart its prey!")
+        return f"{self.name} is tearing apart its prey!"
 
     def sleep(self):
         # Function displays the mammal sleeping.
-        print(f"{self.name} is currently sleeping! zzz")
+        return f"{self.name} is currently sleeping! zzz"
 
     def __str__(self):
         return (f"\nI am {self.name} and a {self.species}\n"
@@ -46,8 +46,11 @@ class Reptile(Animal):
 
     # Overriding Animal's abstract methods.
     def sound(self):
-        # Function returns sound that reptile makes.
-        print(f"{self.name} lets out a big hiss")
+        try:
+            # Function returns sound that reptile makes.
+            print(f"{self.name} lets out a big hiss")
+        except TypeError:
+            print(f"Should be a string not int")
 
     def eat(self):
         # Function displays reptile eating.
