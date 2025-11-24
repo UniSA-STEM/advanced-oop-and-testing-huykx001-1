@@ -34,3 +34,25 @@ class TestLion:
 
     def test_sleep(self, lion):
         assert lion.sleep() == "Scar is currently sleeping! zzz"
+
+# testing the add/remove function.
+class TestEnclosure:
+    @pytest.fixture
+    def lion(self):
+        return Mammal("Scar", "Lion", 40, "meat", 80)
+
+    @pytest.fixture
+    def savannah(self):
+        return Enclosure("large", "savannah", "dirty")
+
+    def test_add_animal(self, savannah, lion):
+        savannah.add_animal(savannah, lion)
+        # Checks if scar is in the system
+        assert savannah.get_animals()[savannah] == "Scar"
+
+    def test_remove_animal(self, savannah, lion):
+        savannah.add_animal(savannah, lion)
+        savannah.remove_animal(savannah, lion)
+        # checks if scar is removed from the system
+        assert savannah.get_animals()[savannah] is None
+
